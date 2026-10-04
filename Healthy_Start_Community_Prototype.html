@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthy Start</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f6f8f7;color:#18333a;line-height:1.5}
+header{background:#0d7a6e;color:#fff;padding:20px 16px}
+header h1{margin:0;font-size:25px}
+header p{margin:4px 0 0;font-size:14px}
+main{max-width:620px;margin:auto;padding:14px}
+.card{background:#fff;border-radius:14px;padding:17px;margin-bottom:12px;box-shadow:0 2px 8px #0001}
+h2{font-size:21px;margin:0 0 10px}
+h3{font-size:17px;margin:15px 0 6px}
+p{margin:7px 0}
+button,.external{display:block;width:100%;min-height:48px;border:0;border-radius:10px;padding:12px 14px;margin:8px 0;background:#0d7a6e;color:#fff;font-size:16px;font-weight:700;text-align:left;text-decoration:none;cursor:pointer}
+button.secondary{background:#e7f2f0;color:#0d7a6e}
+.icon{font-size:24px;margin-right:8px}
+.small{font-size:13px;color:#607178}
+.choice{border:1px solid #d9e2e0;background:#fff;color:#18333a}
+.qa{border-top:1px solid #e1e6e5;padding:13px 0}
+.qa:first-child{border-top:0}
+.answer{display:none;margin-top:7px;color:#42545a}
+.qa.open .answer{display:block}
+.arrow{float:right;font-size:20px}
+.notice{background:#eef7f5;border-left:4px solid #0d7a6e;padding:12px;margin:12px 0}
+ul{padding-left:22px}
+.hidden{display:none}
+.footer-note{font-size:12px;color:#69777b;text-align:center;padding:8px}
+</style>
+</head>
+<body>
+<header>
+<h1>Healthy Start</h1>
+<p>Simple PMTCT information and help finding services</p>
+</header>
+
+<main>
+
+<section id="home">
+<div class="card">
+<h2>Are you pregnant or caring for a new baby?</h2>
+<p>You can get information about HIV testing, treatment and care for you and your baby.</p>
+<div class="notice"><b>You are not alone.</b><br>PMTCT services can help protect the health of mothers and babies.</div>
+</div>
+
+<div class="card">
+<h2>What do you need help with?</h2>
+<button class="choice" onclick="show('test')"><span class="icon">🩺</span>I want an HIV test</button>
+<button class="choice" onclick="show('positive')"><span class="icon">💊</span>I have HIV / I want treatment</button>
+<button class="choice" onclick="show('baby')"><span class="icon">👶</span>I need help for my baby</button>
+<button class="choice" onclick="show('service')"><span class="icon">📍</span>Where can I get help?</button>
+</div>
+
+<div class="card">
+<h3>Important</h3>
+<p class="small">Your HIV result is confidential. This guide does not ask for your name, HIV status or medical record.</p>
+</div>
+</section>
+
+<section id="test" class="hidden">
+<div class="card">
+<h2>🩺 I want an HIV test</h2>
+<div class="qa"><b>When should I test?</b><span class="arrow">+</span><div class="answer">Ask for an HIV test at your first antenatal visit. A health worker may recommend another test later in pregnancy or while breastfeeding.</div></div>
+<div class="qa"><b>Will my result be private?</b><span class="arrow">+</span><div class="answer">HIV testing and results should be handled confidentially. Ask the health worker if you have concerns.</div></div>
+<div class="qa"><b>What if my test is positive?</b><span class="arrow">+</span><div class="answer">A health worker can explain your result and help you start the care and treatment you need.</div></div>
+<div class="qa"><b>Can my partner test too?</b><span class="arrow">+</span><div class="answer">Yes. Ask the health worker about partner testing and support.</div></div>
+<button onclick="show('service')">📍 Find where to get help</button>
+<button class="secondary" onclick="show('home')">← Back</button>
+</div>
+</section>
+
+<section id="positive" class="hidden">
+<div class="card">
+<h2>💊 I have HIV / I want treatment</h2>
+<div class="qa"><b>What should I do?</b><span class="arrow">+</span><div class="answer">Talk to a health worker about starting or continuing HIV treatment (ART) as soon as possible.</div></div>
+<div class="qa"><b>Can treatment protect my baby?</b><span class="arrow">+</span><div class="answer">Taking HIV treatment as prescribed can greatly reduce the risk of HIV passing from mother to baby.</div></div>
+<div class="qa"><b>What about my baby after birth?</b><span class="arrow">+</span><div class="answer">Ask the health worker about medicine for your baby and when your baby should have HIV testing.</div></div>
+<button onclick="show('service')">📍 Find where to get help</button>
+<button class="secondary" onclick="show('home')">← Back</button>
+</div>
+</section>
+
+<section id="baby" class="hidden">
+<div class="card">
+<h2>👶 I need help for my baby</h2>
+<div class="qa"><b>Will my baby need medicine?</b><span class="arrow">+</span><div class="answer">If the mother has HIV, the baby may need medicine soon after birth. Ask a health worker what is recommended.</div></div>
+<div class="qa"><b>When should my baby be tested?</b><span class="arrow">+</span><div class="answer">Ask the health worker about the recommended HIV testing schedule for your baby.</div></div>
+<div class="qa"><b>How should I feed my baby?</b><span class="arrow">+</span><div class="answer">Ask your health worker about the safest feeding option for you and your baby while following your HIV treatment.</div></div>
+<button onclick="show('service')">📍 Find where to get help</button>
+<button class="secondary" onclick="show('home')">← Back</button>
+</div>
+</section>
+
+<section id="service" class="hidden">
+<div class="card">
+<h2>📍 Where can I get help?</h2>
+<p>Look for a health facility that provides antenatal care and HIV services.</p>
+<a class="external" href="https://hfr.fmohconnect.gov.ng/facilityfinder" target="_blank" rel="noopener">Open Health Facility Finder</a>
+<div class="notice"><b>Before you go</b><br>Ask whether the facility provides HIV testing, HIV treatment (ART), antenatal care and services for babies.</div>
+<h3>If you cannot find a facility</h3>
+<p>Ask at your nearest health centre or antenatal clinic where you can get PMTCT services.</p>
+<p class="small">Facility information should be checked before relying on it. This prototype does not claim that every listed facility provides every PMTCT service.</p>
+<button class="secondary" onclick="show('home')">← Back to Home</button>
+</div>
+</section>
+
+<div class="footer-note">Prototype for WALUAIS team testing. Health information should be reviewed by a qualified health professional before public implementation.</div>
+</main>
+
+<script>
+document.querySelectorAll('.qa').forEach(q=>{
+ q.addEventListener('click',()=>q.classList.toggle('open'));
+});
+function show(id){
+ document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
